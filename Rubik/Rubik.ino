@@ -29,7 +29,7 @@ int sleep1 = 1;
 //int numstep=520; // 90 Degree
 int numstep = 50;
 int numstep_slide = 150;
-
+int state = 0;
 char ch;
 int i;
 
@@ -77,10 +77,10 @@ void setup(){
     servo1.write(90);
     servo2.write(0);
 
-   digitalWrite(Ms_F,LOW);
-   digitalWrite(Ms_L,LOW);
-   digitalWrite(Ms_B,LOW);
-   digitalWrite(Ms_R,LOW);
+   digitalWrite(Ms_F,HIGH);
+   digitalWrite(Ms_L,HIGH);
+   digitalWrite(Ms_B,HIGH);
+   digitalWrite(Ms_R,HIGH);
    
     Serial.begin(9600);
     
@@ -91,12 +91,190 @@ void loop(){
    
    //digitalWrite(DIR_PIN,HIGH);
    ch = Serial.read();
-   //while(ch)
-
-   if(ch == 'F'){
-    
+   if(ch == '0'){
+       state =0;
    }
-   
+   if(ch == '1'){
+        state = 1;
+   }
+   if(state==0 && ch!= '0' && ch != '1'){
+       Result(ch);
+   }
+   //while(ch)
+   else if(state == 1 && ch!= '0' && ch != '1'){
+         if(ch == 'F'){
+             String str = "FKfk";
+             for(int i=0;i<str.length();i++){
+               Result(str[i]);
+               //Serial.print(str[i]);
+             }
+             //Serial.println();
+             Serial.println("F");
+         }
+         if(ch == 'f'){
+              String str = "fKFk";
+             for(int i=0;i<str.length();i++){
+               Result(str[i]);
+               //Serial.print(str[i]);
+             }
+             //Serial.println();
+             Serial.println("F'");
+         }
+         if(ch == 'I'){
+             String str = "FF";
+             for(int i=0;i<str.length();i++){
+               Result(str[i]);
+               //Serial.print(str[i]);
+             }
+             //Serial.println();
+             Serial.println("F2");
+             
+         }
+         if(ch == 'L'){
+             String str = "LjlJ";
+             for(int i=0;i<str.length();i++){
+               Result(str[i]);
+               //Serial.print(str[i]);
+             }
+             //Serial.println();
+             Serial.println("L");
+         } 
+         if(ch == 'l'){
+             String str = "ljLJ";
+             for(int i=0;i<str.length();i++){
+               Result(str[i]);
+               //Serial.print(str[i]);
+             }
+             //Serial.println();
+             Serial.println("L'");
+         }
+         if(ch == 'J'){
+             String str = "LL";
+             for(int i=0;i<str.length();i++){
+               Result(str[i]);
+               //Serial.print(str[i]);
+             }
+             //Serial.println();
+             Serial.println("L2");
+         }
+        
+         if(ch == 'B'){
+             String str = "BKbk";
+             for(int i=0;i<str.length();i++){
+               Result(str[i]);
+               //Serial.print(str[i]);
+             }
+             //Serial.println();
+             Serial.println("B");
+         } 
+         
+         if(ch == 'b'){
+             String str = "bKBk";
+             for(int i=0;i<str.length();i++){
+               Result(str[i]);
+               //Serial.print(str[i]);
+             }
+             //Serial.println();
+             Serial.println("B'");
+         }
+          if(ch == 'K'){
+            String str = "BB";
+             for(int i=0;i<str.length();i++){
+               Result(str[i]);
+               //Serial.print(str[i]);
+             }
+             //Serial.println();
+             Serial.println("B2");
+             
+         }
+         if(ch == 'R'){
+             String str = "RjrJ";
+             for(int i=0;i<str.length();i++){
+               Result(str[i]);
+               //Serial.print(str[i]);
+             }
+             //Serial.println();
+             Serial.println("R");
+         }
+         if(ch == 'r'){
+             String str = "rjRJ";
+             for(int i=0;i<str.length();i++){
+               Result(str[i]);
+               //Serial.print(str[i]);
+             }
+             //Serial.println();
+             Serial.println("R'");
+         }
+         if(ch == 'M'){
+             String str = "RR";
+             for(int i=0;i<str.length();i++){
+               Result(str[i]);
+               //Serial.print(str[i]);
+             }
+             //Serial.println();
+             Serial.println("R2");
+         }
+          if(ch == 'U'){
+            String str = "jDJKdkRjrdJKDk";
+             for(int i=0;i<str.length();i++){
+               Result(str[i]);
+               //Serial.print(str[i]);
+             }
+             //Serial.println();
+             Serial.println("U");
+             
+         }
+          if(ch == 'u'){
+            String str = "jDJKdkrjRdJKDk";
+             for(int i=0;i<str.length();i++){
+               Result(str[i]);
+               //Serial.print(str[i]);
+             }
+             //Serial.println();
+             Serial.println("U'");
+             
+         }
+          if(ch == 'O'){
+             String str = "jDJKdkRRjdJKDk";
+             for(int i=0;i<str.length();i++){
+               Result(str[i]);
+               //Serial.print(str[i]);
+             }
+             //Serial.println();
+             Serial.println("U2");
+         }
+          if(ch == 'D'){
+              String str = "jDJKdkLjldJKDk";
+             for(int i=0;i<str.length();i++){
+               Result(str[i]);
+               //Serial.print(str[i]);
+             }
+             //Serial.println();
+             Serial.println("D");
+         } 
+         if(ch == 'd'){
+              String str = "jDJKdkljLdJKDk";
+             for(int i=0;i<str.length();i++){
+               Result(str[i]);
+               //Serial.print(str[i]);
+             }
+             //Serial.println();
+             Serial.println("D'");
+         } 
+         if(ch == 'P'){  // D2
+              String str = "jDJKdkLLjdJKDk";
+             for(int i=0;i<str.length();i++){
+               Result(str[i]);
+               //Serial.print(str[i]);
+             }
+             //Serial.println();
+             Serial.println("D2");
+         }
+   }
+      
+     
+}
+void Result(char ch){
       front(ch);
       left(ch);
       back(ch);
@@ -106,12 +284,11 @@ void loop(){
       front_back_rotate(ch);
       left_right_slide(ch);
       front_back_slide(ch);
-     
 }
 // ส่วนของการหมุนลูกรูบิค
 void front(char ch){
     if(ch == 'f'){
-       digitalWrite(Ms_F,HIGH);
+       digitalWrite(Ms_F,LOW);
        //digitalWrite(LED,HIGH);
        digitalWrite(DIR1_PIN,LOW);
        for(int i=0;i<numstep*4;i++){
@@ -123,10 +300,10 @@ void front(char ch){
            
          // }
        }
-       digitalWrite(Ms_F,LOW);
+       digitalWrite(Ms_F,HIGH);
     }
    if(ch == 'F'){
-       digitalWrite(Ms_F,HIGH);
+       digitalWrite(Ms_F,LOW);
        //digitalWrite(LED,LOW);
        digitalWrite(DIR1_PIN,HIGH);
        for(int i=0;i<numstep*4;i++){
@@ -138,12 +315,12 @@ void front(char ch){
            
          // }
        }
-       digitalWrite(Ms_F,LOW);
+       digitalWrite(Ms_F,HIGH);
     }
 }
 void left(char ch){
     if(ch == 'l'){
-      digitalWrite(Ms_L,HIGH);
+      digitalWrite(Ms_L,LOW);
        //digitalWrite(LED,HIGH);
        digitalWrite(DIR2_PIN,LOW);
        for(int i=0;i<numstep*4;i++){
@@ -155,10 +332,10 @@ void left(char ch){
            
          // }
        }
-       digitalWrite(Ms_L,LOW);
+       digitalWrite(Ms_L,HIGH);
     }
    if(ch == 'L'){
-      digitalWrite(Ms_L,HIGH);
+      digitalWrite(Ms_L,LOW);
       digitalWrite(DIR2_PIN,HIGH);
       for(int i=0;i<numstep*4;i++){
           //if(digitalRead(SW)==1){
@@ -170,12 +347,12 @@ void left(char ch){
           //}
        
       }
-      digitalWrite(Ms_L,LOW);
+      digitalWrite(Ms_L,HIGH);
    }
 }
 void back(char ch){
     if(ch == 'b'){
-      digitalWrite(Ms_B,HIGH);
+      digitalWrite(Ms_B,LOW);
        //digitalWrite(LED,HIGH);
        digitalWrite(DIR3_PIN,LOW);
        for(int i=0;i<numstep*4;i++){
@@ -187,10 +364,10 @@ void back(char ch){
            
          // }
        }
-       digitalWrite(Ms_B,LOW);
+       digitalWrite(Ms_B,HIGH);
     }
    if(ch == 'B'){
-    digitalWrite(Ms_B,HIGH);
+    digitalWrite(Ms_B,LOW);
    digitalWrite(DIR3_PIN,HIGH);
    for(int i=0;i<numstep*4;i++){
           //if(digitalRead(SW)==1){
@@ -202,12 +379,12 @@ void back(char ch){
           //}
        
       }
-      digitalWrite(Ms_B,LOW);
+      digitalWrite(Ms_B,HIGH);
    }
 }
 void right(char ch){
     if(ch == 'r'){
-        digitalWrite(Ms_R,HIGH);
+        digitalWrite(Ms_R,LOW);
        digitalWrite(DIR4_PIN,LOW);
        for(int i=0;i<numstep*4;i++){
           //if(digitalRead(SW)==1){
@@ -218,10 +395,10 @@ void right(char ch){
            
          // }
        }
-       digitalWrite(Ms_R,LOW);
+       digitalWrite(Ms_R,HIGH);
     }
    if(ch == 'R'){
-    digitalWrite(Ms_R,HIGH);
+    digitalWrite(Ms_R,LOW);
     digitalWrite(DIR4_PIN,HIGH);
     for(int i=0;i<numstep*4;i++){
           //if(digitalRead(SW)==1){
@@ -233,14 +410,14 @@ void right(char ch){
           //}
        
       }
-      digitalWrite(Ms_R,LOW);
+      digitalWrite(Ms_R,HIGH);
    }
 }
 
 void left_right_rotate(char ch){
   if(ch == 'a'){ // หมุนทวนทางซ้าย
-         digitalWrite(Ms_L,HIGH);
-         digitalWrite(Ms_R,HIGH);
+         digitalWrite(Ms_L,LOW);
+         digitalWrite(Ms_R,LOW);
          
          digitalWrite(DIR2_PIN,LOW);
          digitalWrite(DIR4_PIN,HIGH);
@@ -256,12 +433,12 @@ void left_right_rotate(char ch){
            // }
          }
 
-        digitalWrite(Ms_L,LOW);
-        digitalWrite(Ms_R,LOW);
+        digitalWrite(Ms_L,HIGH);
+        digitalWrite(Ms_R,HIGH);
       }
      if(ch == 'A'){ // หมุนตามตัวทางซ้าย
-      digitalWrite(Ms_L,HIGH);
-         digitalWrite(Ms_R,HIGH);
+      digitalWrite(Ms_L,LOW);
+         digitalWrite(Ms_R,LOW);
          
          digitalWrite(DIR2_PIN,HIGH);
          digitalWrite(DIR4_PIN,LOW);
@@ -277,15 +454,15 @@ void left_right_rotate(char ch){
            // }
          }
 
-         digitalWrite(Ms_L,LOW);
-         digitalWrite(Ms_R,LOW);
+         digitalWrite(Ms_L,HIGH);
+         digitalWrite(Ms_R,HIGH);
      }
 }
 
 void front_back_rotate(char ch){
     if(ch == 'd'){ // หมุนทวนทางหน้า
-         digitalWrite(Ms_F,HIGH);
-         digitalWrite(Ms_B,HIGH);
+         digitalWrite(Ms_F,LOW);
+         digitalWrite(Ms_B,LOW);
           
          digitalWrite(DIR1_PIN,LOW);
          digitalWrite(DIR3_PIN,HIGH);
@@ -300,12 +477,12 @@ void front_back_rotate(char ch){
              
            // }
          }
-         digitalWrite(Ms_F,LOW);
-         digitalWrite(Ms_B,LOW);
-      }
-     if(ch == 'D'){ // หมุนตามตัวทางหน้า
          digitalWrite(Ms_F,HIGH);
          digitalWrite(Ms_B,HIGH);
+      }
+     if(ch == 'D'){ // หมุนตามตัวทางหน้า
+         digitalWrite(Ms_F,LOW);
+         digitalWrite(Ms_B,LOW);
       
          digitalWrite(DIR1_PIN,HIGH);
          digitalWrite(DIR3_PIN,LOW);
@@ -320,8 +497,8 @@ void front_back_rotate(char ch){
              
            // }
          }
-         digitalWrite(Ms_F,LOW);
-         digitalWrite(Ms_B,LOW);
+         digitalWrite(Ms_F,HIGH);
+         digitalWrite(Ms_B,HIGH);
      }
 }
 
