@@ -74,8 +74,8 @@ void setup(){
     servo1.attach(10);
     servo2.attach(11);
     
-    servo1.write(90);
-    servo2.write(0);
+    servo1.write(85);
+    servo2.write(90);
 
    digitalWrite(Ms_F,HIGH);
    digitalWrite(Ms_L,HIGH);
@@ -503,14 +503,14 @@ void front_back_rotate(char ch){
 }
 
 void left_right_slide(char ch){
-   if(ch == 'J'){
+   if(ch == 'j'){
       
-       servo1.write(90);
+       servo1.write(85);
        delay(1000);
     }
-   if(ch == 'j'){
+   if(ch == 'J'){
     
-       servo1.write(0);
+       servo1.write(1);
        delay(1000);
    }
 
@@ -525,7 +525,7 @@ void front_back_slide(char ch){
        delay(1000);
     }
    if(ch == 'K'){
-       servo2.write(85);
+       servo2.write(90);
        delay(1000);
        
    }
