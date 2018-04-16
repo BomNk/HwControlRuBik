@@ -291,7 +291,7 @@ void front(char ch){
        digitalWrite(Ms_F,LOW);
        //digitalWrite(LED,HIGH);
        digitalWrite(DIR1_PIN,LOW);
-       for(int i=0;i<numstep*4;i++){
+       for(int i=0;i<numstep*4+8;i++){
           //if(digitalRead(SW)==1){
            digitalWrite(STEP1_PIN,HIGH);
            delay(sleep);
@@ -306,7 +306,7 @@ void front(char ch){
        digitalWrite(Ms_F,LOW);
        //digitalWrite(LED,LOW);
        digitalWrite(DIR1_PIN,HIGH);
-       for(int i=0;i<numstep*4;i++){
+       for(int i=0;i<numstep*4+8;i++){
           //if(digitalRead(SW)==1){
            digitalWrite(STEP1_PIN,HIGH);
            delay(sleep);
@@ -355,7 +355,7 @@ void back(char ch){
       digitalWrite(Ms_B,LOW);
        //digitalWrite(LED,HIGH);
        digitalWrite(DIR3_PIN,LOW);
-       for(int i=0;i<numstep*4;i++){
+       for(int i=0;i<numstep*4+3;i++){
           //if(digitalRead(SW)==1){
            digitalWrite(STEP3_PIN,HIGH);
            delay(sleep);
@@ -386,7 +386,7 @@ void right(char ch){
     if(ch == 'r'){
         digitalWrite(Ms_R,LOW);
        digitalWrite(DIR4_PIN,LOW);
-       for(int i=0;i<numstep*4;i++){
+       for(int i=0;i<numstep*4+3;i++){
           //if(digitalRead(SW)==1){
            digitalWrite(STEP4_PIN,HIGH);
            delay(sleep);
@@ -400,7 +400,7 @@ void right(char ch){
    if(ch == 'R'){
     digitalWrite(Ms_R,LOW);
     digitalWrite(DIR4_PIN,HIGH);
-    for(int i=0;i<numstep*4;i++){
+    for(int i=0;i<numstep*4+3;i++){
           //if(digitalRead(SW)==1){
            digitalWrite(STEP4_PIN,HIGH);
            delay(sleep);
@@ -510,7 +510,7 @@ void left_right_slide(char ch){
     }
    if(ch == 'J'){
     
-       servo1.write(1);
+       servo1.write(2);
        delay(1000);
    }
 
@@ -521,7 +521,7 @@ void left_right_slide(char ch){
 void front_back_slide(char ch){
    if(ch == 'k'){
       
-       servo2.write(0);
+       servo2.write(5);
        delay(1000);
     }
    if(ch == 'K'){
