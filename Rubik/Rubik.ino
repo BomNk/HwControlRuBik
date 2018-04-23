@@ -400,7 +400,7 @@ void right(char ch){
    if(ch == 'R'){
     digitalWrite(Ms_R,LOW);
     digitalWrite(DIR4_PIN,HIGH);
-    for(int i=0;i<numstep*4+3;i++){
+    for(int i=0;i<numstep*4+3 ;i++){
           //if(digitalRead(SW)==1){
            digitalWrite(STEP4_PIN,HIGH);
            delay(sleep);
