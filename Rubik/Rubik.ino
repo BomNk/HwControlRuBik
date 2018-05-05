@@ -291,7 +291,7 @@ void front(char ch){
        digitalWrite(Ms_F,LOW);
        //digitalWrite(LED,HIGH);
        digitalWrite(DIR1_PIN,LOW);
-       for(int i=0;i<numstep*4+8;i++){
+       for(int i=0;i<numstep*4+2;i++){
           //if(digitalRead(SW)==1){
            digitalWrite(STEP1_PIN,HIGH);
            delay(sleep);
@@ -355,7 +355,7 @@ void back(char ch){
       digitalWrite(Ms_B,LOW);
        //digitalWrite(LED,HIGH);
        digitalWrite(DIR3_PIN,LOW);
-       for(int i=0;i<numstep*4+3;i++){
+       for(int i=0;i<numstep*4+5;i++){
           //if(digitalRead(SW)==1){
            digitalWrite(STEP3_PIN,HIGH);
            delay(sleep);
@@ -386,7 +386,7 @@ void right(char ch){
     if(ch == 'r'){
         digitalWrite(Ms_R,LOW);
        digitalWrite(DIR4_PIN,LOW);
-       for(int i=0;i<numstep*4+3;i++){
+       for(int i=0;i<numstep*4+1;i++){
           //if(digitalRead(SW)==1){
            digitalWrite(STEP4_PIN,HIGH);
            delay(sleep);
